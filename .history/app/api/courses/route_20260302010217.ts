@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+// import { redis } from '@/lib/redis';
 
 const CACHE_KEY = 'courses:all';
 const CACHE_TTL_SECONDS = 300;
@@ -31,4 +32,3 @@ export async function GET() {
   }
 }
 
-export const dynamic = 'force-dynamic'

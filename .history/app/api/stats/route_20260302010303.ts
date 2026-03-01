@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-
+// import { redis } from '@/lib/redis';
 
 const CACHE_KEY = 'stats:all';
 const CACHE_TTL_SECONDS = 60;
@@ -28,5 +28,3 @@ export async function GET() {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
-
-export const dynamic = 'force-dynamic'
