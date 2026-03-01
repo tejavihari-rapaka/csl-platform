@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Color system – CSL brand */
+    --background: 60 20% 97%; /* soft cream #FAFAF7 */
+    --foreground: 0 0% 10%; /* near-black text #1A1A1A */
+
+    --card: 60 20% 97%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 60 20% 99%;
+    --popover-foreground: 0 0% 12%;
+
+    --primary: 186 77% 22%; /* deep teal #0D5C63 */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 28 80% 54%; /* warm amber #E8872A */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 12 56% 51%; /* terracotta #C8553D */
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 60 12% 92%;
+    --muted-foreground: 0 0% 35%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 180 10% 86%;
+    --input: 180 10% 86%;
+    --ring: 186 77% 22%;
+
+    /* Typography – font families (hooked up via next/font) */
+    --font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', sans-serif;
+    --font-display: 'Playfair Display', 'Times New Roman', serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco,
+      Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    /* Typography – scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+
+    /* Line heights */
+    --leading-tight: 1.1;
+    --leading-snug: 1.25;
+    --leading-relaxed: 1.6;
+
+    /* Spacing scale */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    /* Radius scale */
+    --radius-xs: 0.25rem;
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-pill: 999px;
+
+    /* For shadcn/ui components */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 200 40% 8%;
+    --foreground: 0 0% 96%;
+
+    --card: 200 40% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 200 40% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 186 77% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 28 80% 60%;
+    --secondary-foreground: 0 0% 10%;
+
+    --accent: 12 56% 56%;
+    --accent-foreground: 0 0% 98%;
+
+    --muted: 210 16% 18%;
+    --muted-foreground: 0 0% 80%;
+
+    --destructive: 0 72% 40%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 16% 24%;
+    --input: 210 16% 24%;
+    --ring: 186 77% 52%;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #fafaf7;
+  }
+
+  :root {
+    /* Shadows */
+    --shadow-card: 0 18px 45px rgba(13, 92, 99, 0.12);
+    --shadow-hero: 0 40px 120px rgba(13, 92, 99, 0.25);
+    --shadow-glow: 0 0 45px rgba(200, 85, 61, 0.35);
+
+    /* Motion tokens */
+    --duration-fast: 150ms;
+    --duration-normal: 240ms;
+    --duration-slow: 420ms;
+    --easing-soft: cubic-bezier(0.22, 1, 0.36, 1);
+    --easing-emphasized: cubic-bezier(0.3, 0, 0.3, 1);
+  }
+}
+
+/* Restore cursor pointer for buttons (Tailwind v4 compatibility) */
+@layer base {
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-csl-ink;
+  }
+
+  a {
+    @apply text-primary underline-offset-4 transition-colors;
+  }
+
+  a:hover {
+    @apply text-secondary;
+  }
+
+  /* Scroll targets: prevent fixed navbar overlap */
+  [id='hero'],
+  [id='about'],
+  [id='achievements'],
+  [id='courses'],
+  [id='mentors'],
+  [id='gallery'],
+  [id='testimonials'],
+  [id='contact'] {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+/* Hero section: mesh gradient blobs */
+@keyframes hero-blob-pulse {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.15) translate(5%, -5%);
+    opacity: 0.55;
+  }
+}
+
+@keyframes hero-blob-pulse-sm {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.2) translate(-8%, 8%);
+    opacity: 0.5;
+  }
+}
+
+/* Hero floating circles */
+@keyframes hero-float-slow {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(8px, -12px);
+  }
+}
+
+@keyframes hero-float-medium {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-6px, -8px);
+  }
+}
+
+@keyframes hero-float-fast {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 6px);
+  }
+}
+
+@layer components {
+  .animate-hero-blob {
+    animation: hero-blob-pulse 12s ease-in-out infinite;
+  }
+  .animate-hero-blob-sm {
+    animation: hero-blob-pulse-sm 10s ease-in-out infinite;
+  }
+  .animate-hero-float-slow {
+    animation: hero-float-slow 8s ease-in-out infinite;
+  }
+  .animate-hero-float-medium {
+    animation: hero-float-medium 6s ease-in-out infinite;
+  }
+  .animate-hero-float-fast {
+    animation: hero-float-fast 7s ease-in-out infinite;
+  }
+
+  /* Stats section: shimmer while loading */
+  @keyframes stats-shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  .animate-stats-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.06) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: stats-shimmer 1.5s ease-in-out infinite;
+  }
+}

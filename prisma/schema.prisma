@@ -1,0 +1,90 @@
+// Prisma schema for Center for Spoken Languages (CSL)
+// Public data models for language learning center
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Language {
+  id          String   @id @default(cuid())
+  name        String
+  code        String   @unique // e.g. "ta", "hi", "en"
+  description String?
+  imageUrl    String?
+  courses     Course[]
+}
+
+model Course {
+  id           String   @id @default(cuid())
+  title        String
+  languageId   String
+  language     Language @relation(fields: [languageId], references: [id], onDelete: Cascade)
+  level        String   // BEGINNER, INTERMEDIATE, ADVANCED
+  description  String?
+  thumbnailUrl String?
+  status       String   @default("DRAFT") // DRAFT, PUBLISHED, ARCHIVED
+  mentorId     String?
+  mentor       Mentor?  @relation(fields: [mentorId], references: [id], onDelete: SetNull)
+  duration     Int?     // duration in weeks
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Mentor {
+  id        String   @id @default(cuid())
+  name      String
+  bio       String?
+  photoUrl  String?
+  languages String[] // array of language codes they teach
+  rating    Float?   @default(0)
+  courses   Course[]
+}
+
+model GalleryImage {
+  id       String  @id @default(cuid())
+  url      String
+  caption  String?
+  order    Int     @default(0)
+  isActive Boolean @default(true)
+  createdAt DateTime @default(now())
+}
+
+model Testimonial {
+  id          String   @id @default(cuid())
+  studentName String
+  content     String
+  rating      Int      // 1-5
+  language    String?
+  isApproved  Boolean  @default(false)
+  avatarUrl   String?
+  createdAt   DateTime @default(now())
+}
+
+enum AchievementType {
+  STUDENT
+  CENTER
+}
+
+model Achievement {
+  id          String         @id @default(cuid())
+  title       String
+  description String?
+  imageUrl    String?
+  type        AchievementType
+  year        Int
+  createdAt   DateTime       @default(now())
+}
+
+model SiteStats {
+  id               String   @id @default(cuid())
+  totalCourses     Int      @default(0)
+  totalMentors     Int      @default(0)
+  pastStudents     Int      @default(0)
+  enrolledStudents Int      @default(0)
+  updatedAt        DateTime @updatedAt
+}
