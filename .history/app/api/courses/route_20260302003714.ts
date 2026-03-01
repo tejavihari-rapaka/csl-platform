@@ -32,9 +32,9 @@ export async function GET() {
 
     const payload = { courses, languages };
 
-    // if (redis) {
-    //   await redis.set(CACHE_KEY, JSON.stringify(payload), 'EX', CACHE_TTL_SECONDS);
-    // }
+    if (redis) {
+      await redis.set(CACHE_KEY, JSON.stringify(payload), 'EX', CACHE_TTL_SECONDS);
+    }
 
     return NextResponse.json(payload, { status: 200 });
   } catch (error) {

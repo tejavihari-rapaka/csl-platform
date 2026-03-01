@@ -2,10 +2,10 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 // import { redis } from '@/lib/redis';
 
-const CACHE_KEY = 'courses:all';
-const CACHE_TTL_SECONDS = 300;
+const CACHE_KEY = 'mentors:all';
+const CACHE_TTL_SECONDS = 600;
 
-export const revalidate = 300;
+export const revalidate = 600;
 
 export async function GET() {
   try {
@@ -17,29 +17,22 @@ export async function GET() {
     //   }
     // }
 
-    const courses = await prisma.course.findMany({
-      where: { status: 'PUBLISHED' },
+    const mentors = await prisma.mentor.findMany({
+      orderBy: { rating: 'desc' },
       include: {
-        language: true,
-        mentor: true,
+        _count: { select: { courses: true } },
       },
-      orderBy: { createdAt: 'desc' },
     });
 
-    const languages = await prisma.language.findMany({
-      orderBy: { name: 'asc' },
-    });
+    const payload = { mentors };
 
-    const payload = { courses, languages };
-
-    // if (redis) {
-    //   await redis.set(CACHE_KEY, JSON.stringify(payload), 'EX', CACHE_TTL_SECONDS);
-    // }
+    if (redis) {
+      await redis.set(CACHE_KEY, JSON.stringify(payload), 'EX', CACHE_TTL_SECONDS);
+    }
 
     return NextResponse.json(payload, { status: 200 });
   } catch (error) {
-    console.error('GET /api/courses error', error);
+    console.error('GET /api/mentors error', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
-

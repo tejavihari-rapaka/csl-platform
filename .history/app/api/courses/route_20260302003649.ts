@@ -9,13 +9,13 @@ export const revalidate = 300;
 
 export async function GET() {
   try {
-    // if (redis) {
-    //   const cached = await redis.get(CACHE_KEY);
-    //   if (cached) {
-    //     const data = JSON.parse(cached);
-    //     return NextResponse.json(data, { status: 200 });
-    //   }
-    // }
+    if (redis) {
+      const cached = await redis.get(CACHE_KEY);
+      if (cached) {
+        const data = JSON.parse(cached);
+        return NextResponse.json(data, { status: 200 });
+      }
+    }
 
     const courses = await prisma.course.findMany({
       where: { status: 'PUBLISHED' },
@@ -32,9 +32,9 @@ export async function GET() {
 
     const payload = { courses, languages };
 
-    // if (redis) {
-    //   await redis.set(CACHE_KEY, JSON.stringify(payload), 'EX', CACHE_TTL_SECONDS);
-    // }
+    if (redis) {
+      await redis.set(CACHE_KEY, JSON.stringify(payload), 'EX', CACHE_TTL_SECONDS);
+    }
 
     return NextResponse.json(payload, { status: 200 });
   } catch (error) {
