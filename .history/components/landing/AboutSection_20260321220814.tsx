@@ -40,67 +40,67 @@ function RevealFromLeft({
 
 export function AboutSection() {
   return (
-    <section id="about" className="border-y bg-csl-cream pb-16 pt-10 md:pb-24 md:pt-14">
+    <section id="about" className="border-y bg-csl-cream py-16 md:py-24">
       <div className="container">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-5xl">
           <RevealFromLeft className="flex flex-col">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">About CSL</h2>
-            {/* <h2 className="mt-3 text-3xl font-bold leading-tight text-csl-ink md:text-[40px]">
+            <span className="text-xs font-semibold uppercase tracking-widest text-csl-primary">About CSL</span>
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-csl-ink md:text-[40px]">
               Centre for Spoken Languages (CSL)
-            </h2> */}
-            <div className="mt-6 space-y-4 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
+            </h2>
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-csl-ink/80">
               <p>
-                The <strong>Centre for Spoken Languages (CSL)</strong> is a unique learning initiative dedicated to nurturing
-                linguistic curiosity, cultural appreciation, and global understanding. Founded in <strong>2020 during the pandemic</strong>,
+                The Centre for Spoken Languages (CSL) is a unique learning initiative dedicated to nurturing
+                linguistic curiosity, cultural appreciation, and global understanding. Founded in 2020 during the
                 pandemic, CSL began as a small online effort to introduce children and families to the joy of learning
                 languages in an engaging and meaningful way.
               </p>
               <p>
-                What started as a modest summer program with just <strong>two languages - French and Kannada - soon evolved into a vibrant multilingual learning community.</strong>
-                Today, CSL offers <strong>eight languages</strong> guided
+                What started as a modest summer program with just two languages, French and Kannada, soon
+                evolved into a vibrant multilingual learning community. Today, CSL offers eight languages guided
                 by passionate volunteer mentors who believe in sharing knowledge as an act of service.
               </p>
               <p>
-                At its core, CSL is inspired by the timeless ideals of <strong>"Fatherhood of God and Brotherhood of Man"</strong>
-                and the ancient wisdom of <strong>"वसुधैव कुटुम्बकम्" (The World is One Family)</strong>. These principles shape
-                the philosophy of the centre: that language is not merely a tool for communication, but a powerful
-                bridge that connects cultures, ideas, and people.
+                At its core, CSL is inspired by the timeless ideals of "Fatherhood of God and Brotherhood of Man"
+                and "Vasudhaiva Kutumbakam" (The World is One Family). These principles shape the philosophy
+                of the centre: language is not merely a tool for communication, but a bridge that connects cultures,
+                ideas, and people.
               </p>
             </div>
             <div className="mt-8 space-y-5">
               <div>
-                <h3 className="text-xl font-semibold text-csl-ink md:text-2xl">Our Mission</h3>
-                <p className="mt-2 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
-                  To make language learning <strong>accessible, joyful, and culturally enriching</strong>, while fostering mutual
+                <h3 className="text-lg font-semibold text-csl-ink">Our Mission</h3>
+                <p className="mt-2 text-base leading-relaxed text-csl-ink/80">
+                  To make language learning accessible, joyful, and culturally enriching, while fostering mutual
                   respect and global harmony through interactive sessions, creative activities, and collaborative
                   learning.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-csl-ink md:text-2xl">Our Vision</h3>
-                <p className="mt-2 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
-                  A world where learning languages helps individuals <strong>understand one another better</strong>,
-                  <strong> appreciate diversity, and build meaningful connections beyond geographical and cultural boundaries.</strong>
+                <h3 className="text-lg font-semibold text-csl-ink">Our Vision</h3>
+                <p className="mt-2 text-base leading-relaxed text-csl-ink/80">
+                  A world where learning languages helps individuals understand one another better, appreciate
+                  diversity, and build meaningful connections beyond geographical and cultural boundaries.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-csl-ink md:text-2xl">Our Goals</h3>
-                <ul className="mt-2 list-disc space-y-2 pl-6 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
+                <h3 className="text-lg font-semibold text-csl-ink">Our Goals</h3>
+                <ul className="mt-2 list-disc space-y-2 pl-6 text-base leading-relaxed text-csl-ink/80">
                   <li>Introduce learners of all ages to multiple languages in a welcoming and engaging environment.</li>
-                  <li>Promote appreciation of the <strong>cultural, literary, and historical richness</strong> of different languages.</li>
-                  <li>Encourage <strong>spoken communication skills and cultural exchange</strong> among learners from different regions.</li>
-                  <li>Build a community of learners who value <strong>unity in diversity and global understanding.</strong></li>
+                  <li>Promote appreciation of the cultural, literary, and historical richness of different languages.</li>
+                  <li>Encourage spoken communication skills and cultural exchange among learners from different regions.</li>
+                  <li>Build a community of learners who value unity in diversity and global understanding.</li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-csl-ink md:text-2xl">Our Journey So Far</h3>
-                <p className="mt-2 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
+                <h3 className="text-lg font-semibold text-csl-ink">Our Journey So Far</h3>
+                <p className="mt-2 text-base leading-relaxed text-csl-ink/80">
                   From its humble beginnings as a small online experiment, CSL has grown into a thriving initiative
-                  with <strong>hundreds of learners participating across batches.</strong> The centre now conducts structured classes,
+                  with hundreds of learners participating across batches. The centre now conducts structured classes,
                   interactive activities, and annual celebrations that showcase multilingual creativity through
                   performances, games, and collaborative projects.
                 </p>
-                <p className="mt-2 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
+                <p className="mt-2 text-base leading-relaxed text-csl-ink/80">
                   More than a language program, CSL is a community-driven learning movement sustained by dedicated
                   mentors and enthusiastic students who celebrate languages as shared human heritage. Through CSL,
                   languages become pathways to connection, understanding, and unity.
@@ -118,6 +118,12 @@ export function AboutSection() {
                 </span>
               ))}
             </div>
+            <blockquote className="mt-8 rounded-xl border-l-4 border-csl-primary/40 bg-white/60 py-4 pl-6 pr-4 shadow-sm md:pl-8">
+              <p className="text-base italic leading-relaxed text-csl-ink/85">
+                &ldquo;Vasudhaiva Kutumbakam - The World is One Family.&rdquo;
+              </p>
+              <footer className="mt-4 text-sm font-medium text-csl-primary">— CSL Core Principle</footer>
+            </blockquote>
           </RevealFromLeft>
         </div>
       </div>

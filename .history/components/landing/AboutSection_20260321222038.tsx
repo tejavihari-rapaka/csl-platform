@@ -44,7 +44,7 @@ export function AboutSection() {
       <div className="container">
         <div className="mx-auto max-w-6xl">
           <RevealFromLeft className="flex flex-col">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">About CSL</h2>
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-csl-primary">About CSL</h2>
             {/* <h2 className="mt-3 text-3xl font-bold leading-tight text-csl-ink md:text-[40px]">
               Centre for Spoken Languages (CSL)
             </h2> */}

@@ -42,12 +42,12 @@ export function AboutSection() {
   return (
     <section id="about" className="border-y bg-csl-cream pb-16 pt-10 md:pb-24 md:pt-14">
       <div className="container">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-5xl">
           <RevealFromLeft className="flex flex-col">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">About CSL</h2>
-            {/* <h2 className="mt-3 text-3xl font-bold leading-tight text-csl-ink md:text-[40px]">
+            <span className="text-xs font-semibold uppercase tracking-widest text-csl-primary">About CSL</span>
+            <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-csl-ink md:text-[40px]">
               Centre for Spoken Languages (CSL)
-            </h2> */}
+            </h2>
             <div className="mt-6 space-y-4 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
               <p>
                 The <strong>Centre for Spoken Languages (CSL)</strong> is a unique learning initiative dedicated to nurturing
@@ -69,7 +69,7 @@ export function AboutSection() {
             </div>
             <div className="mt-8 space-y-5">
               <div>
-                <h3 className="text-xl font-semibold text-csl-ink md:text-2xl">Our Mission</h3>
+                <h3 className="text-lg font-semibold text-csl-ink">Our Mission</h3>
                 <p className="mt-2 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
                   To make language learning <strong>accessible, joyful, and culturally enriching</strong>, while fostering mutual
                   respect and global harmony through interactive sessions, creative activities, and collaborative
@@ -77,14 +77,14 @@ export function AboutSection() {
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-csl-ink md:text-2xl">Our Vision</h3>
+                <h3 className="text-lg font-semibold text-csl-ink">Our Vision</h3>
                 <p className="mt-2 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
                   A world where learning languages helps individuals <strong>understand one another better</strong>,
                   <strong> appreciate diversity, and build meaningful connections beyond geographical and cultural boundaries.</strong>
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-csl-ink md:text-2xl">Our Goals</h3>
+                <h3 className="text-lg font-semibold text-csl-ink">Our Goals</h3>
                 <ul className="mt-2 list-disc space-y-2 pl-6 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
                   <li>Introduce learners of all ages to multiple languages in a welcoming and engaging environment.</li>
                   <li>Promote appreciation of the <strong>cultural, literary, and historical richness</strong> of different languages.</li>
@@ -93,7 +93,7 @@ export function AboutSection() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-csl-ink md:text-2xl">Our Journey So Far</h3>
+                <h3 className="text-lg font-semibold text-csl-ink">Our Journey So Far</h3>
                 <p className="mt-2 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
                   From its humble beginnings as a small online experiment, CSL has grown into a thriving initiative
                   with <strong>hundreds of learners participating across batches.</strong> The centre now conducts structured classes,

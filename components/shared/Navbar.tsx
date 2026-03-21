@@ -98,7 +98,7 @@ export function Navbar() {
             className="flex flex-col focus:outline-none focus:ring-2 focus:ring-csl-primary focus:ring-offset-2 focus:ring-offset-csl-cream rounded-sm"
             aria-label="CSL – Center for Spoken Languages, go to homepage"
           >
-            <span className="font-display text-2xl font-bold tracking-tight text-csl-primary md:text-3xl">
+            <span className="text-2xl font-bold tracking-tight text-csl-primary md:text-3xl">
               CSL
             </span>
             <span className="text-[10px] text-muted-foreground leading-tight md:text-xs">
@@ -180,7 +180,7 @@ export function Navbar() {
                 className="w-[min(320px,85vw)] flex flex-col gap-6 sm:max-w-sm"
               >
                 <SheetHeader className="text-left">
-                  <SheetTitle className="font-display text-xl text-csl-primary">
+                  <SheetTitle className="text-xl text-csl-primary">
                     Menu
                   </SheetTitle>
                 </SheetHeader>

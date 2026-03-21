@@ -164,7 +164,7 @@ export function MentorsSection({ mentors }: MentorsSectionProps) {
         <span className="text-xs font-semibold uppercase tracking-widest text-csl-primary">
           Meet the Team
         </span>
-        <h2 className="mt-2 font-display text-3xl font-bold tracking-tight md:text-4xl">
+        <h2 className="mt-2 text-3xl font-bold tracking-tight md:text-4xl">
           Volunteer Mentors Who Make It Happen
         </h2>
         <p className="mt-3 max-w-2xl text-muted-foreground">

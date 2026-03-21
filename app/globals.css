@@ -152,7 +152,7 @@
   h2,
   h3,
   h4 {
-    @apply font-display text-csl-ink;
+    @apply font-sans text-csl-ink;
   }
 
   a {

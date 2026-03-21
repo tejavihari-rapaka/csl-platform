@@ -44,10 +44,10 @@ export function AboutSection() {
       <div className="container">
         <div className="mx-auto max-w-6xl">
           <RevealFromLeft className="flex flex-col">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">About CSL</h2>
-            {/* <h2 className="mt-3 text-3xl font-bold leading-tight text-csl-ink md:text-[40px]">
+            <span className="text-xs font-semibold uppercase tracking-widest text-csl-primary">About CSL</span>
+            <h2 className="mt-3 text-3xl font-bold leading-tight text-csl-ink md:text-[40px]">
               Centre for Spoken Languages (CSL)
-            </h2> */}
+            </h2>
             <div className="mt-6 space-y-4 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
               <p>
                 The <strong>Centre for Spoken Languages (CSL)</strong> is a unique learning initiative dedicated to nurturing

@@ -135,8 +135,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          Inspired by the Fatherhood of God and Brotherhood of Man, 
-          CSL connects a global family through the joy of languages.
+          A global community inspired by the Fatherhood of God and Brotherhood of Man.
+          CSL nurtures empathy through the joy of languages, connecting learners beyond boundaries.
         </motion.p>
 
         {/* CTAs — 0.8s delay */}

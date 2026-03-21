@@ -59,8 +59,8 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <AboutSection />
       <StatsSection stats={stats} />
+      <AboutSection />
       <LanguagesSection />
       <CoursesSection courses={courses} languages={languages} />
       <MentorsSection mentors={mentors} />

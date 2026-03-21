@@ -100,7 +100,7 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className="inline-flex items-center rounded-full border-2 border-csl-primary px-4 py-1.5 text-sm font-medium text-csl-primary">
-          A Global Multilingual Learning Community
+            Free Community Learning Center
           </span>
         </motion.div>
 
@@ -135,8 +135,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
-          Inspired by the Fatherhood of God and Brotherhood of Man, 
-          CSL connects a global family through the joy of languages.
+          Join our volunteer-led language community. Learn from passionate mentors.
+          Zero cost, lifetime skills.
         </motion.p>
 
         {/* CTAs — 0.8s delay */}
