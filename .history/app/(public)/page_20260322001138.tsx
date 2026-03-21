@@ -1,4 +1,3 @@
-import { prisma } from '@/lib/prisma';
 import { Hero } from '@/components/landing/Hero';
 import { AboutSection } from '@/components/landing/AboutSection';
 import { StatsSection } from '@/components/landing/StatsSection';
@@ -8,32 +7,54 @@ import { MentorsSection } from '@/components/landing/MentorsSection';
 import { TestimonialsSection } from '@/components/landing/TestimonialsSection';
 import { ContactSection } from '@/components/landing/ContactSection';
 
-export const dynamic = 'force-dynamic';
+/**
+ * Main landing page for CSL - aggregates all landing sections.
+ */
+
+const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000';
+
+async function getCoursesData() {
+  const res = await fetch(`${baseUrl}/api/courses`, {
+    next: { revalidate: 300 },
+  });
+  if (!res.ok) return { courses: [], languages: [] };
+  return res.json() as Promise<{ courses: any[]; languages: any[] }>;
+}
+
+async function getMentorsData() {
+  const res = await fetch(`${baseUrl}/api/mentors`, {
+    next: { revalidate: 600 },
+  });
+  if (!res.ok) return { mentors: [] };
+  return res.json() as Promise<{ mentors: any[] }>;
+}
+
+async function getStatsData() {
+  const res = await fetch(`${baseUrl}/api/stats`, {
+    next: { revalidate: 60 },
+  });
+  if (!res.ok) {
+    return {
+      totalCourses: 0,
+      totalMentors: 0,
+      pastStudents: 0,
+      enrolledStudents: 0,
+    };
+  }
+  return res.json() as Promise<{
+    totalCourses: number;
+    totalMentors: number;
+    pastStudents: number;
+    enrolledStudents: number;
+  }>;
+}
 
 export default async function HomePage() {
-  const [courses, languages, mentors, statsRaw] = await Promise.all([
-    prisma.course.findMany({
-      where: { status: 'PUBLISHED' },
-      include: { language: true, mentor: true },
-      orderBy: { createdAt: 'desc' },
-    }),
-    prisma.language.findMany({
-      orderBy: { name: 'asc' },
-    }),
-    prisma.mentor.findMany({
-      orderBy: { rating: 'desc' },
-    }),
-    prisma.siteStats.findFirst({
-      orderBy: { updatedAt: 'desc' },
-    }),
+  const [{ courses, languages }, { mentors }, stats] = await Promise.all([
+    getCoursesData(),
+    getMentorsData(),
+    getStatsData(),
   ]);
-
-  const stats = statsRaw ?? {
-    totalCourses: 0,
-    totalMentors: 0,
-    pastStudents: 0,
-    enrolledStudents: 0,
-  };
 
   return (
     <>
@@ -58,3 +79,6 @@ export default async function HomePage() {
     </>
   );
 }
+
+export const dynamic = 'force-dynamic'
+
