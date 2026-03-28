@@ -1,10 +1,14 @@
 import { prisma } from '@/lib/prisma';
 import { Hero } from '@/components/landing/Hero';
 import { AboutSection } from '@/components/landing/AboutSection';
+import { GrowthTimeline } from '@/components/landing/GrowthTimeline';
 import { StatsSection } from '@/components/landing/StatsSection';
 import { LanguagesSection } from '@/components/landing/LanguagesSection';
 import { CoursesSection } from '@/components/landing/CoursesSection';
 import { MentorsSection } from '@/components/landing/MentorsSection';
+import { WhatMakesUsSpecial } from '@/components/landing/WhatMakesUsSpecial';
+import { GlobalReach } from '@/components/landing/GlobalReach';
+import { FeaturedTestimonial } from '@/components/landing/FeaturedTestimonial';
 import { TestimonialsSection } from '@/components/landing/TestimonialsSection';
 import { ContactSection } from '@/components/landing/ContactSection';
 
@@ -40,9 +44,14 @@ export default async function HomePage() {
       <Hero />
       <StatsSection stats={stats} />
       <AboutSection />
+      <GrowthTimeline />
       <LanguagesSection />
       <CoursesSection courses={courses} languages={languages} />
+      <WhatMakesUsSpecial />
       <MentorsSection mentors={mentors} />
+      <GlobalReach />
+      <FeaturedTestimonial />
+      <TestimonialsSection />
       <section id="gallery" className="py-16 md:py-24" aria-label="Gallery">
         <div className="container">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
@@ -53,7 +62,6 @@ export default async function HomePage() {
           </p>
         </div>
       </section>
-      <TestimonialsSection />
       <ContactSection />
     </>
   );

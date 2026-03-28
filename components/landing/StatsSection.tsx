@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { animate } from 'framer-motion';
 import { BookOpen, Users, GraduationCap, TrendingUp } from 'lucide-react';
 
@@ -52,7 +52,7 @@ function StatCell({
     });
 
     return () => controls.stop();
-  }, [isInView, hasAnimated, item.value, onComplete]);
+  }, [isInView, hasAnimated, item.value, item.key, onComplete]);
 
   return (
     <div
@@ -127,9 +127,9 @@ export function StatsSection({ stats }: { stats: StatsData }) {
     return () => observer.disconnect();
   }, []);
 
-  const handleComplete = (key: keyof StatsData) => {
+  const handleComplete = useCallback((key: keyof StatsData) => {
     setCompletedKeys((prev) => new Set(prev).add(key));
-  };
+  }, []);
 
   const allAnimated = completedKeys.size >= items.length;
   const showShimmer = isInView && !allAnimated;
