@@ -49,7 +49,7 @@ export default async function HomePage() {
       <CoursesSection courses={courses} languages={languages} />
       <WhatMakesUsSpecial />
       <MentorsSection mentors={mentors} />
-      <GlobalReach />
+      {/* <GlobalReach /> */}
       <FeaturedTestimonial />
       <TestimonialsSection />
       <section id="gallery" className="py-16 md:py-24" aria-label="Gallery">
