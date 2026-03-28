@@ -335,6 +335,7 @@ async function main() {
       totalMentors: 6,
       pastStudents: 1050,
       enrolledStudents: 127,
+      totalCountries: 9,
     },
   });
 

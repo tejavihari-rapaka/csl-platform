@@ -2,13 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { animate } from 'framer-motion';
-import { BookOpen, Users, GraduationCap, TrendingUp } from 'lucide-react';
+import { BookOpen, Users, GraduationCap, TrendingUp, Globe} from 'lucide-react';
 
 type StatsData = {
   totalCourses: number;
   totalMentors: number;
   pastStudents: number;
   enrolledStudents: number;
+  totalCountries?: number;
 };
 
 type StatItem = {
@@ -108,6 +109,12 @@ export function StatsSection({ stats }: { stats: StatsData }) {
       value: stats.enrolledStudents,
       icon: TrendingUp,
     },
+    {
+      key: 'totalCountries',
+      label: 'Countries Reached',
+      value: stats.totalCountries || 0,
+      icon: Globe,
+    }
   ];
 
   useEffect(() => {
@@ -144,7 +151,7 @@ export function StatsSection({ stats }: { stats: StatsData }) {
       }}
     >
       <div className="container">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           {items.map((item) => (
             <StatCell
               key={item.key}

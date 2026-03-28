@@ -86,5 +86,6 @@ model SiteStats {
   totalMentors     Int      @default(0)
   pastStudents     Int      @default(0)
   enrolledStudents Int      @default(0)
+  totalCountries   Int      @default(0)
   updatedAt        DateTime @updatedAt
 }

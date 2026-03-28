@@ -37,6 +37,7 @@ export default async function HomePage() {
     totalMentors: 0,
     pastStudents: 0,
     enrolledStudents: 0,
+    totalCountries: 0,
   };
 
   return (
