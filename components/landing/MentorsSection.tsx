@@ -173,22 +173,9 @@ export function MentorsSection({ mentors }: MentorsSectionProps) {
         </p>
 
         {mentors.length > 0 ? (
-          <div
-            className={cn(
-              'mt-10 flex gap-6 overflow-x-auto pb-4 md:grid md:overflow-visible md:pb-0',
-              'md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
-              'snap-x snap-mandatory md:snap-none'
-            )}
-            style={{
-              scrollSnapType: 'x mandatory',
-              WebkitOverflowScrolling: 'touch',
-            }}
-          >
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {mentors.map((mentor) => (
-              <div
-                key={mentor.id}
-                className="min-w-[280px] shrink-0 snap-start md:min-w-0"
-              >
+              <div key={mentor.id} className="w-full">
                 <MentorCard
                   mentor={mentor}
                   isExpanded={expandedId === mentor.id}
