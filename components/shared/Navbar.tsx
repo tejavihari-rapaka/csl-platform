@@ -17,11 +17,13 @@ import { cn } from '@/lib/utils';
 const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
+  { label: 'Our Growth', href: '#growth' },
   { label: 'Courses', href: '#courses' },
   { label: 'Mentors', href: '#mentors' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Achievements', href: '#achievements' },
+  { label: 'What Makes Us Special', href: '#what-makes-us-special' },
 ] as const;
 
 const SCROLL_THRESHOLD = 80;
