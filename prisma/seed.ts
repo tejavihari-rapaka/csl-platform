@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 async function main() {
   console.log('Seeding CSL database...');
 
-  // Clear existing data (optional - comment out for incremental seed)
+  // Clear existing data
   await prisma.siteStats.deleteMany();
   await prisma.achievement.deleteMany();
   await prisma.testimonial.deleteMany();
@@ -14,7 +14,7 @@ async function main() {
   await prisma.mentor.deleteMany();
   await prisma.language.deleteMany();
 
-  // Languages - 5 languages for CSL
+  // ── LANGUAGES ──────────────────────────────────────────
   const tamil = await prisma.language.create({
     data: {
       name: 'Tamil',
@@ -50,8 +50,22 @@ async function main() {
       description: 'Most widely spoken Chinese language, official in China and Taiwan.',
     },
   });
+  const telugu = await prisma.language.create({
+    data: {
+      name: 'Telugu',
+      code: 'te',
+      description: 'Classical Dravidian language, widely spoken in Andhra Pradesh and Telangana.',
+    },
+  });
+  const japanese = await prisma.language.create({
+    data: {
+      name: 'Japanese',
+      code: 'ja',
+      description: 'Fascinating language with unique writing systems, rich culture and anime heritage.',
+    },
+  });
 
-  // Mentors - 4 volunteer mentors
+  // ── MENTORS ────────────────────────────────────────────
   const mentor1 = await prisma.mentor.create({
     data: {
       name: 'Priya Sharma',
@@ -84,10 +98,27 @@ async function main() {
       rating: 4.7,
     },
   });
+  const mentor5 = await prisma.mentor.create({
+    data: {
+      name: 'Ravi Teja',
+      bio: 'Telugu literature enthusiast with a passion for teaching mother tongue to younger generations.',
+      languages: ['te', 'en'],
+      rating: 4.7,
+    },
+  });
+  const mentor6 = await prisma.mentor.create({
+    data: {
+      name: 'Yuki Tanaka',
+      bio: 'Native Japanese speaker from Tokyo. Makes Japanese fun through manga, anime and daily conversation.',
+      languages: ['ja', 'en'],
+      rating: 4.8,
+    },
+  });
 
-  // Courses - 8 courses across languages
+  // ── COURSES ────────────────────────────────────────────
   await prisma.course.createMany({
     data: [
+      // Tamil
       {
         title: 'Tamil for Beginners',
         languageId: tamil.id,
@@ -98,42 +129,6 @@ async function main() {
         duration: 8,
       },
       {
-        title: 'Conversational Hindi',
-        languageId: hindi.id,
-        level: 'INTERMEDIATE',
-        description: 'Improve your Hindi speaking skills for real-life situations.',
-        status: 'PUBLISHED',
-        mentorId: mentor2.id,
-        duration: 10,
-      },
-      {
-        title: 'English for Work',
-        languageId: english.id,
-        level: 'INTERMEDIATE',
-        description: 'Professional English for meetings, emails, and presentations.',
-        status: 'PUBLISHED',
-        mentorId: mentor2.id,
-        duration: 6,
-      },
-      {
-        title: 'French Basics',
-        languageId: french.id,
-        level: 'BEGINNER',
-        description: 'Start your French journey with essential vocabulary and grammar.',
-        status: 'PUBLISHED',
-        mentorId: mentor3.id,
-        duration: 12,
-      },
-      {
-        title: 'Mandarin Speaking',
-        languageId: mandarin.id,
-        level: 'BEGINNER',
-        description: 'Focus on pronunciation and basic conversational Mandarin.',
-        status: 'PUBLISHED',
-        mentorId: mentor4.id,
-        duration: 10,
-      },
-      {
         title: 'Tamil Intermediate',
         languageId: tamil.id,
         level: 'INTERMEDIATE',
@@ -141,6 +136,16 @@ async function main() {
         status: 'PUBLISHED',
         mentorId: mentor1.id,
         duration: 12,
+      },
+      // Hindi
+      {
+        title: 'Conversational Hindi',
+        languageId: hindi.id,
+        level: 'INTERMEDIATE',
+        description: 'Improve your Hindi speaking skills for real-life situations.',
+        status: 'PUBLISHED',
+        mentorId: mentor2.id,
+        duration: 10,
       },
       {
         title: 'Hindi for Heritage Speakers',
@@ -151,6 +156,26 @@ async function main() {
         mentorId: mentor2.id,
         duration: 8,
       },
+      // English
+      {
+        title: 'English for Work',
+        languageId: english.id,
+        level: 'INTERMEDIATE',
+        description: 'Professional English for meetings, emails, and presentations.',
+        status: 'PUBLISHED',
+        mentorId: mentor2.id,
+        duration: 6,
+      },
+      // French
+      {
+        title: 'French Basics',
+        languageId: french.id,
+        level: 'BEGINNER',
+        description: 'Start your French journey with essential vocabulary and grammar.',
+        status: 'PUBLISHED',
+        mentorId: mentor3.id,
+        duration: 12,
+      },
       {
         title: 'French Conversation Club',
         languageId: french.id,
@@ -160,10 +185,58 @@ async function main() {
         mentorId: mentor3.id,
         duration: 6,
       },
+      // Mandarin
+      {
+        title: 'Mandarin Speaking',
+        languageId: mandarin.id,
+        level: 'BEGINNER',
+        description: 'Focus on pronunciation and basic conversational Mandarin.',
+        status: 'PUBLISHED',
+        mentorId: mentor4.id,
+        duration: 10,
+      },
+      // Telugu
+      {
+        title: 'Telugu for Beginners',
+        languageId: telugu.id,
+        level: 'BEGINNER',
+        description: 'Learn Telugu script, basic vocabulary and everyday conversations.',
+        status: 'PUBLISHED',
+        mentorId: mentor5.id,
+        duration: 8,
+      },
+      {
+        title: 'Telugu Literature & Culture',
+        languageId: telugu.id,
+        level: 'INTERMEDIATE',
+        description: 'Explore Telugu poetry, literature and rich cultural heritage.',
+        status: 'PUBLISHED',
+        mentorId: mentor5.id,
+        duration: 10,
+      },
+      // Japanese
+      {
+        title: 'Japanese for Beginners',
+        languageId: japanese.id,
+        level: 'BEGINNER',
+        description: 'Start with Hiragana, Katakana and essential daily Japanese phrases.',
+        status: 'PUBLISHED',
+        mentorId: mentor6.id,
+        duration: 12,
+      },
+      {
+        title: 'Japanese Conversation',
+        languageId: japanese.id,
+        level: 'INTERMEDIATE',
+        description: 'Build confidence in spoken Japanese for travel and daily life.',
+        status: 'PUBLISHED',
+        mentorId: mentor6.id,
+        duration: 10,
+      },
     ],
   });
 
-  // Testimonials - 6 approved testimonials
+  // ── TESTIMONIALS ───────────────────────────────────────
   await prisma.testimonial.createMany({
     data: [
       {
@@ -208,10 +281,24 @@ async function main() {
         language: 'Tamil',
         isApproved: true,
       },
+      {
+        studentName: 'Sneha P.',
+        content: 'Telugu classes at CSL reconnected me with my heritage. Ravi sir explains everything so clearly.',
+        rating: 5,
+        language: 'Telugu',
+        isApproved: true,
+      },
+      {
+        studentName: 'Kenji R.',
+        content: 'Yuki sensei made Japanese so approachable. I can now watch anime without subtitles!',
+        rating: 5,
+        language: 'Japanese',
+        isApproved: true,
+      },
     ],
   });
 
-  // Achievements - sample center and student achievements
+  // ── ACHIEVEMENTS ───────────────────────────────────────
   await prisma.achievement.createMany({
     data: [
       {
@@ -226,14 +313,26 @@ async function main() {
         type: 'STUDENT',
         year: 2024,
       },
+      {
+        title: '7 Languages Offered',
+        description: 'CSL expanded to offer 7 languages including Telugu and Japanese.',
+        type: 'CENTER',
+        year: 2025,
+      },
+      {
+        title: 'Best Community Initiative',
+        description: 'Recognized by the Local Community Council for outstanding volunteer service.',
+        type: 'CENTER',
+        year: 2024,
+      },
     ],
   });
 
-  // Site stats - aggregate numbers for landing page
+  // ── SITE STATS ─────────────────────────────────────────
   await prisma.siteStats.create({
     data: {
-      totalCourses: 8,
-      totalMentors: 4,
+      totalCourses: 12,
+      totalMentors: 6,
       pastStudents: 1050,
       enrolledStudents: 127,
     },
