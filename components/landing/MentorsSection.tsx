@@ -159,8 +159,8 @@ export function MentorsSection({ mentors }: MentorsSectionProps) {
   };
 
   return (
-    <section id="mentors" className="py-16 md:py-24">
-      <div className="container">
+    <section className="py-16 md:py-24">
+      <div id="mentors" className="container">
         <span className="text-xs font-semibold uppercase tracking-widest text-csl-primary">
           Meet the Team
         </span>

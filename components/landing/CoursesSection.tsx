@@ -77,8 +77,8 @@ export function CoursesSection({ courses, languages }: CoursesSectionProps) {
   const hasCourses = courses.length > 0;
 
   return (
-    <section id="courses" className="py-16 md:py-24">
-      <div className="container">
+    <section className="py-16 md:py-24">
+      <div id="courses" className="container">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
