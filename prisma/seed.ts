@@ -240,61 +240,26 @@ async function main() {
   await prisma.testimonial.createMany({
     data: [
       {
-        studentName: 'Arun M.',
-        content: 'CSL changed my life. I went from zero Tamil to having conversations with my grandparents in just 6 months. The mentors are incredibly patient.',
+        studentName: 'Dr. L. Padmavathy',
+        content: "Learning Sanskrit through CSL has been a deeply enriching journey. Our mentor, Dr. Renu Pant, teaches with exceptional clarity and dedication — her classes are interactive, encouraging, and meticulously structured. Despite her own commitments, she goes above and beyond, correcting every homework assignment and taking a personal interest in each student's progress. This course has opened a window into our culture and literature that I had long wished to explore. I consider myself fortunate to be learning under her guidance, and I am grateful to CSL for making this possible.",
         rating: 5,
-        language: 'Tamil',
+        language: 'Sanskrit',
         isApproved: true,
       },
       {
-        studentName: 'Sarah L.',
-        content: 'Free French lessons with native speakers? Unbelievable. Marie is the best teacher I have ever had.',
+        studentName: 'Dr. Rubina Saxena',
+        content: "The CSL Sanskrit language course has been an enriching and intellectually engaging experience for me. Under the guidance of Dr. Renu Pant, the learning process became both clear and meaningful, as she explained concepts with depth and patience. I particularly enjoyed the interactive nature of the classes, including recitation and discussions, which made learning dynamic. The course helped me build a stronger foundation in Sanskrit and deepened my appreciation for its linguistic precision and philosophical richness. Overall, it has been a rewarding experience that has enhanced both my understanding and enjoyment of the language. Please find attached my Video.",
         rating: 5,
-        language: 'French',
+        language: 'Sanskrit',
         isApproved: true,
       },
       {
-        studentName: 'David K.',
-        content: 'I needed English for my job. The professional English course was exactly what I needed. Highly recommend.',
+        studentName: 'Agam Gupta',
+        content: "I'Ve really enjoyed these online English classes! They made learning so much easier by breaking down tough grammar and translation exercises into things I couls actually use every day. It was super convenient to join from home, and I feel way more confifent speaking and writing now. I'm really glad I took the leap to join!",
         rating: 5,
         language: 'English',
         isApproved: true,
-      },
-      {
-        studentName: 'Lakshmi R.',
-        content: 'Learning Hindi at CSL helped me connect with my roots. The community is warm and welcoming.',
-        rating: 4,
-        language: 'Hindi',
-        isApproved: true,
-      },
-      {
-        studentName: 'Emily T.',
-        content: 'Mandarin seemed impossible until I found CSL. Wei breaks it down into manageable steps. Amazing experience.',
-        rating: 5,
-        language: 'Mandarin',
-        isApproved: true,
-      },
-      {
-        studentName: 'Vijay S.',
-        content: 'Volunteer-run, free, and high quality. This is what community learning should look like.',
-        rating: 5,
-        language: 'Tamil',
-        isApproved: true,
-      },
-      {
-        studentName: 'Sneha P.',
-        content: 'Telugu classes at CSL reconnected me with my heritage. Ravi sir explains everything so clearly.',
-        rating: 5,
-        language: 'Telugu',
-        isApproved: true,
-      },
-      {
-        studentName: 'Kenji R.',
-        content: 'Yuki sensei made Japanese so approachable. I can now watch anime without subtitles!',
-        rating: 5,
-        language: 'Japanese',
-        isApproved: true,
-      },
+      }
     ],
   });
 
