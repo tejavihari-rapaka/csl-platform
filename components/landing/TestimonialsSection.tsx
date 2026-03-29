@@ -12,7 +12,7 @@ import {
 export async function TestimonialsSection() {
   const testimonials = await prisma.testimonial.findMany({
     where: { isApproved: true },
-    take: 6,
+    take: 9,
     orderBy: { createdAt: 'desc' },
   });
 
