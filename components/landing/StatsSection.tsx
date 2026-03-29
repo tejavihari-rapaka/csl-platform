@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { animate } from 'framer-motion';
-import { BookOpen, Users, GraduationCap, TrendingUp, Globe} from 'lucide-react';
+import { BookOpen, Users, GraduationCap, TrendingUp, Globe, Wifi} from 'lucide-react';
 
 type StatsData = {
   totalCourses: number;
@@ -10,6 +10,7 @@ type StatsData = {
   pastStudents: number;
   enrolledStudents: number;
   totalCountries?: number;
+  satsangBranchesConnected?: number;
 };
 
 type StatItem = {
@@ -99,7 +100,8 @@ export function StatsSection({ stats }: { stats: StatsData }) {
     },
     {
       key: 'pastStudents',
-      label: 'Students Taught (past)',
+      // label: 'Students Taught (past)',
+      label: 'Learners served since 2020',
       value: stats.pastStudents,
       icon: GraduationCap,
     },
@@ -114,6 +116,12 @@ export function StatsSection({ stats }: { stats: StatsData }) {
       label: 'Countries Reached',
       value: stats.totalCountries || 0,
       icon: Globe,
+    },
+    {
+      key: 'satsangBranchesConnected',
+      label: 'Satsang Branches Connected',
+      value: stats.satsangBranchesConnected || 0,
+      icon: Wifi,
     }
   ];
 

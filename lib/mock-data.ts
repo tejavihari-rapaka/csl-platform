@@ -8,6 +8,8 @@ export const mockStats = {
   totalMentors: 8,
   pastStudents: 320,
   enrolledStudents: 45,
+  satsangBranchesConnected: 200,
+  totalCountries: 9,
 };
 
 export const mockLanguages = [

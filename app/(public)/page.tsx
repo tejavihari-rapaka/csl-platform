@@ -38,6 +38,7 @@ export default async function HomePage() {
     pastStudents: 0,
     enrolledStudents: 0,
     totalCountries: 0,
+    satsangBranchesConnected: 0,
   };
 
   return (

@@ -87,5 +87,6 @@ model SiteStats {
   pastStudents     Int      @default(0)
   enrolledStudents Int      @default(0)
   totalCountries   Int      @default(0)
+  satsangBranchesConnected Int @default(0)
   updatedAt        DateTime @updatedAt
 }

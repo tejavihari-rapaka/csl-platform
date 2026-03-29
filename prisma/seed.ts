@@ -336,6 +336,7 @@ async function main() {
       pastStudents: 1050,
       enrolledStudents: 127,
       totalCountries: 9,
+      satsangBranchesConnected: 200,
     },
   });
 

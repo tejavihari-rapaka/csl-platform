@@ -19,6 +19,8 @@ export async function GET() {
       totalMentors: stats?.totalMentors ?? 0,
       pastStudents: stats?.pastStudents ?? 0,
       enrolledStudents: stats?.enrolledStudents ?? 0,
+      satsangBranchesConnected: stats?.satsangBranchesConnected ?? 0,
+      totalCountries: stats?.totalCountries ?? 0,
     };
 
 
