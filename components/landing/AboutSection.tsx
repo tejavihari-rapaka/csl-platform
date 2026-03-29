@@ -92,20 +92,6 @@ export function AboutSection() {
                   <li>Build a community of learners who value <strong>unity in diversity and global understanding.</strong></li>
                 </ul>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold text-csl-ink md:text-2xl">Our Journey So Far</h3>
-                <p className="mt-2 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
-                  From its humble beginnings as a small online experiment, CSL has grown into a thriving initiative
-                  with <strong>hundreds of learners participating across batches.</strong> The centre now conducts structured classes,
-                  interactive activities, and annual celebrations that showcase multilingual creativity through
-                  performances, games, and collaborative projects.
-                </p>
-                <p className="mt-2 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
-                  More than a language program, CSL is a community-driven learning movement sustained by dedicated
-                  mentors and enthusiastic students who celebrate languages as shared human heritage. Through CSL,
-                  languages become pathways to connection, understanding, and unity.
-                </p>
-              </div>
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               {VALUES.map(({ icon, label, color }) => (
