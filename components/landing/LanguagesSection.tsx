@@ -7,6 +7,8 @@ const LANGUAGE_VISUALS: Record<string, { flag: string; native: string }> = {
   Sanskrit: { flag: '🇮🇳', native: 'संस्कृतम्' },
   Kannada: { flag: '🇮🇳', native: 'ಕನ್ನಡ' },
   Telugu: { flag: '🇮🇳', native: 'తెలుగు' },
+  Tamil: { flag: '🇮🇳', native: 'தமிழ்' },
+  Mandarin: { flag: '🇨🇳', native: '普通话' }, 
   English: { flag: '🇬🇧', native: 'English' },
   French: { flag: '🇫🇷', native: 'Français' },
   German: { flag: '🇩🇪', native: 'Deutsch' },
