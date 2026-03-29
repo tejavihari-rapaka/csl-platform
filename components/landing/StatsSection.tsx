@@ -58,25 +58,27 @@ function StatCell({
 
   return (
     <div
-      className={`
-        relative flex flex-col items-center justify-center gap-3 px-6 py-10
-        md:border-r md:border-white/15 md:last:border-r-0
-        ${showShimmer && !hasAnimated ? 'animate-stats-shimmer rounded-xl' : ''}
-      `}
+    className={`
+      relative flex flex-col items-center justify-center gap-2 px-3 py-10
+      lg:border-r lg:border-white/15 lg:last:border-r-0
+      ${showShimmer && !hasAnimated ? 'animate-stats-shimmer rounded-xl' : ''}
+    `}
+  >
+    <Icon
+      className="h-10 w-10 shrink-0 text-csl-amber" // Reduced from h-12
+      strokeWidth={1.5}
+      aria-hidden
+    />
+    <span
+      className="font-mono text-3xl font-bold tabular-nums text-white md:text-[44px]" // Reduced from 56px
+      aria-live="polite"
     >
-      <Icon
-        className="h-12 w-12 shrink-0 text-csl-amber"
-        strokeWidth={1.5}
-        aria-hidden
-      />
-      <span
-        className="font-mono text-4xl font-bold tabular-nums text-white md:text-[56px]"
-        aria-live="polite"
-      >
-        {displayValue}+
-      </span>
-      <span className="text-center text-base text-white/75">{item.label}</span>
-    </div>
+      {displayValue}
+    </span>
+    <span className="text-center text-xs md:text-sm text-white/75 leading-snug">
+      {item.label}
+    </span>
+  </div>
   );
 }
 
@@ -151,27 +153,26 @@ export function StatsSection({ stats }: { stats: StatsData }) {
 
   return (
     <section
-      id="achievements"
-      ref={ref}
-      className="relative overflow-hidden bg-[#0D5C63] py-20 md:py-24"
-      style={{
-        clipPath: 'polygon(0 3%, 100% 0, 100% 97%, 0 100%)',
-      }}
-    >
-      <div className="container">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
-          {items.map((item) => (
-            <StatCell
-              key={item.key}
-              item={item}
-              isInView={isInView}
-              hasAnimated={completedKeys.has(item.key)}
-              onComplete={handleComplete}
-              showShimmer={showShimmer}
-            />
-          ))}
-        </div>
+    id="achievements"
+    ref={ref}
+    className="relative overflow-hidden bg-[#0D5C63] py-20"
+    style={{ clipPath: 'polygon(0 3%, 100% 0, 100% 97%, 0 100%)' }}
+  >
+    <div className="container px-4 mx-auto"> 
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6"> 
+        {/* Changed to lg:grid-cols-6 for laptop view */}
+        {items.map((item) => (
+          <StatCell
+            key={item.key}
+            item={item}
+            isInView={isInView}
+            hasAnimated={completedKeys.has(item.key)}
+            onComplete={handleComplete}
+            showShimmer={showShimmer}
+          />
+        ))}
       </div>
-    </section>
+    </div>
+  </section>
   );
 }
