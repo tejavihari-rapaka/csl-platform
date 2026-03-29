@@ -10,6 +10,7 @@ import { WhatMakesUsSpecial } from '@/components/landing/WhatMakesUsSpecial';
 import { GlobalReach } from '@/components/landing/GlobalReach';
 import { FeaturedTestimonial } from '@/components/landing/FeaturedTestimonial';
 import { TestimonialsSection } from '@/components/landing/TestimonialsSection';
+import { GallerySection } from '@/components/landing/GallerySection';
 import { ContactSection } from '@/components/landing/ContactSection';
 
 export const dynamic = 'force-dynamic';
@@ -54,16 +55,7 @@ export default async function HomePage() {
       {/* <GlobalReach />
       <FeaturedTestimonial /> */}
       <TestimonialsSection />
-      <section id="gallery" className="py-16 md:py-24" aria-label="Gallery">
-        <div className="container">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Community Gallery
-          </h2>
-          <p className="mt-2 text-muted-foreground">
-            Moments from our language learning community. (Coming soon.)
-          </p>
-        </div>
-      </section>
+      <GallerySection />
       <ContactSection />
     </>
   );
