@@ -52,10 +52,10 @@ export default async function HomePage() {
       <CoursesSection courses={courses} languages={languages} />
       <WhatMakesUsSpecial />
       <MentorsSection mentors={mentors} />
-      {/* <GlobalReach />
-      <FeaturedTestimonial /> */}
-      <TestimonialsSection />
+      {/* <GlobalReach /> */}
       <GallerySection />
+      {/* <FeaturedTestimonial /> */}
+      <TestimonialsSection />
       <ContactSection />
     </>
   );
