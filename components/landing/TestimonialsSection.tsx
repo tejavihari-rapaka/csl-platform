@@ -20,7 +20,10 @@ export async function TestimonialsSection() {
   return (
     <section className="py-20 md:py-28 overflow-hidden bg-slate-50">
       <div id="testimonials" className="container mb-12">
-        <h2 className="text-3xl font-bold tracking-tight text-csl-ink md:text-5xl">
+        <p className="text-xs font-semibold uppercase tracking-widest text-csl-primary mb-2">
+          Learner Stories
+        </p>
+        <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-csl-ink md:text-4xl">
           What Students Say
         </h2>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">

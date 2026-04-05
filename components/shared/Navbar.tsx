@@ -55,14 +55,20 @@ export function Navbar() {
 
     observerRef.current = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const id = entry.target.getAttribute('id');
-          if (id) setActiveSection(id);
+        // Sort entries by their position on screen (top to bottom)
+        const sortedEntries = entries.sort((a, b) => {
+          return a.boundingClientRect.top - b.boundingClientRect.top;
         });
+        
+        // Find the first (topmost) entry that is intersecting
+        const visibleEntry = sortedEntries.find((entry) => entry.isIntersecting);
+        if (visibleEntry) {
+          const id = visibleEntry.target.getAttribute('id');
+          if (id) setActiveSection(id);
+        }
       },
       {
-        rootMargin: '-20% 0px -70% 0px',
+        rootMargin: '0px 0px -66% 0px',
         threshold: 0,
       }
     );

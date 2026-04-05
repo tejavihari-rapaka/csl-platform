@@ -25,8 +25,13 @@ export async function LanguagesSection() {
   return (
     <section id="languages" className="py-16 md:py-24">
       <div className="container">
-        <h2 className="text-3xl font-bold tracking-tight text-csl-ink md:text-4xl">Languages We Offer</h2>
-        <p className="mt-2 text-base text-muted-foreground md:text-lg">
+        <p className="text-xs font-semibold uppercase tracking-widest text-csl-primary mb-2">
+          Available Languages
+        </p>
+        <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-csl-ink md:text-4xl">
+          Languages We Offer
+        </h2>
+        <p className="mt-2 text-base text-muted-foreground md:text-lg leading-relaxed">
           Spoken language courses taught by community volunteers. Start your journey today.
         </p>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

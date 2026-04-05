@@ -89,7 +89,7 @@ export function GrowthTimeline() {
           <p className="text-xs font-semibold uppercase tracking-widest text-csl-primary">
             Our Growth
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-csl-ink md:text-4xl">
+          <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-csl-ink md:text-4xl">
             From a pilot to a movement
           </h2>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">

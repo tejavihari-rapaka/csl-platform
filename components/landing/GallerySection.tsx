@@ -58,7 +58,7 @@ export function GallerySection() {
   return (
     <section className="py-16 md:py-24" aria-label="Gallery">
       <div id="gallery" className="container">
-        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+        <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-csl-ink md:text-4xl">
           Community Gallery
         </h2>
         <p className="mt-2 max-w-2xl leading-relaxed text-muted-foreground">

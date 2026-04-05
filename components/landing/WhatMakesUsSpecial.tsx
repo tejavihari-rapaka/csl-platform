@@ -72,7 +72,7 @@ export function WhatMakesUsSpecial() {
         <p className="text-xs font-semibold uppercase tracking-widest text-csl-primary">
           What Makes Us Special
         </p>
-        <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-csl-ink md:text-4xl">
+        <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-csl-ink md:text-4xl">
           More than just language classes
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">

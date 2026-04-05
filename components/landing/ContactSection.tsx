@@ -16,7 +16,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-16 md:py-24">
       <div className="container">
-        <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Get in Touch</h2>
+        <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-csl-ink md:text-4xl">Get in Touch</h2>
         <p className="mt-2 text-muted-foreground">
           Questions about our courses? Want to volunteer as a mentor? Reach out.
         </p>

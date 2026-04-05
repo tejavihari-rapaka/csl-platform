@@ -81,10 +81,13 @@ export function CoursesSection({ courses, languages }: CoursesSectionProps) {
       <div id="courses" className="container">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-csl-primary mb-2">
+              Our Languages
+            </p>
+            <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-csl-ink md:text-4xl">
               Languages &amp; Courses
             </h2>
-            <p className="mt-2 max-w-xl text-muted-foreground">
+            <p className="mt-2 max-w-xl text-muted-foreground leading-relaxed">
               Explore our volunteer-taught language programs
             </p>
           </div>

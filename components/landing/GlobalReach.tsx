@@ -63,10 +63,10 @@ export function GlobalReach() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#E8872A]">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#E8872A]">
               Global Reach
             </p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-white md:text-5xl">
+            <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-white md:text-4xl">
               One classroom, no boundaries
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
