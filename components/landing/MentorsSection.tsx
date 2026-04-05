@@ -32,8 +32,7 @@ const LANGUAGE_RING_COLORS: Record<string, string> = {
 };
 
 function getRingColor(codes: string[]) {
-  const code = (codes[0] ?? 'en').toLowerCase();
-  return LANGUAGE_RING_COLORS[code] ?? 'ring-csl-primary';
+  return 'ring-csl-primary/30';
 }
 
 function StarRating({ rating }: { rating: number }) {
@@ -73,8 +72,7 @@ function MentorCard({
   return (
     <Card
       className={cn(
-        'group flex h-full flex-col overflow-hidden rounded-2xl border border-border/70 bg-card/80 shadow-sm transition-all duration-200 ease-out',
-        'hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,92,99,0.12)]',
+        'group flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-white shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(13,92,99,0.15)]',
         'md:snap-center md:snap-always'
       )}
       onMouseEnter={() => onHover(true)}
@@ -86,7 +84,7 @@ function MentorCard({
             'rounded-full p-1 transition-shadow duration-200',
             ringColor,
             'ring-2',
-            'group-hover:ring-4 group-hover:shadow-[0_0_20px_rgba(13,92,99,0.2)]'
+            'group-hover:ring-4 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.12)]'
           )}
         >
           <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border-2 border-background">
@@ -120,7 +118,7 @@ function MentorCard({
             <Badge
               key={code}
               variant="secondary"
-              className="rounded-full px-2.5 py-0.5 text-xs font-medium"
+              className="rounded-full border border-csl-primary/20 bg-csl-primary/8 px-2.5 py-0.5 text-xs font-medium text-csl-primary"
             >
               {code.toUpperCase()}
             </Badge>
@@ -131,7 +129,7 @@ function MentorCard({
           <div className="overflow-hidden">
             <p
               className={cn(
-                'text-center text-sm text-muted-foreground transition-all duration-300 ease-out',
+                'text-justify text-sm text-muted-foreground transition-all duration-300 ease-out',
                 isExpanded ? 'max-h-[200px]' : 'max-h-[2.625rem] line-clamp-2'
               )}
             >
@@ -141,9 +139,9 @@ function MentorCard({
         )}
       </CardContent>
 
-      <CardFooter className="border-t bg-muted/30 px-6 py-3">
+      <CardFooter className="border-t border-border/50 bg-muted/30 px-6 py-3">
         <div className="flex w-full items-center justify-center gap-2 text-sm text-muted-foreground">
-          <Users className="h-4 w-4 shrink-0" aria-hidden />
+          <Users className="h-4 w-4 shrink-0 text-csl-primary/50" aria-hidden />
           <span>{studentsLabel}</span>
         </div>
       </CardFooter>
@@ -159,15 +157,15 @@ export function MentorsSection({ mentors }: MentorsSectionProps) {
   };
 
   return (
-    <section className="py-16 md:py-24">
-      <div id="mentors" className="container">
-        <span className="text-xs font-semibold uppercase tracking-widest text-csl-primary">
+    <section className="bg-[#0F2A4A] py-16 md:py-24">
+      <div id="mentors" className="container text-white">
+        <span className="text-xs font-semibold uppercase tracking-widest text-[#E8872A]">
           Meet the Team
         </span>
-        <h2 className="mt-2 text-3xl font-bold tracking-tight md:text-4xl">
+        <h2 className="mt-2 text-3xl font-bold tracking-tight text-white md:text-4xl">
           Volunteer Mentors Who Make It Happen
         </h2>
-        <p className="mt-3 max-w-2xl text-muted-foreground">
+        <p className="mt-3 max-w-2xl text-white/70 text-justify">
           Every mentor at CSL teaches out of passion, not profit. Learn from the best in your
           community.
         </p>
