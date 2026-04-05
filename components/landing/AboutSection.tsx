@@ -54,18 +54,18 @@ export function AboutSection() {
               Centre for Spoken Languages (CSL)
             </h2> */}
             <div className="mt-6 space-y-4 text-[17px] leading-relaxed text-csl-ink/80 md:text-lg">
-              <p>
+              <p className="text-justify">
                 The <strong>Centre for Spoken Languages (CSL)</strong> is a unique learning initiative dedicated to nurturing
                 linguistic curiosity, cultural appreciation, and global understanding. Founded in <strong>2020 during the pandemic</strong>,
                 pandemic, CSL began as a small online effort to introduce children and families to the joy of learning
                 languages in an engaging and meaningful way.
               </p>
-              <p>
+              <p className="text-justify">
                 What started as a modest summer program with just <strong>two languages - French and Kannada - soon evolved into a vibrant multilingual learning community.</strong>
                 Today, CSL offers <strong>eight languages</strong> guided
                 by passionate volunteer mentors who believe in sharing knowledge as an act of service.
               </p>
-              <p>
+              <p className="text-justify">
                 At its core, CSL is inspired by the timeless ideals of <strong>"Fatherhood of God and Brotherhood of Man"</strong>
                 and the ancient wisdom of <strong>"वसुधैव कुटुम्बकम्" (The World is One Family)</strong>. These principles shape
                 the philosophy of the centre: that language is not merely a tool for communication, but a powerful

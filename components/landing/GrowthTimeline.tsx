@@ -92,7 +92,7 @@ export function GrowthTimeline() {
           <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-csl-ink md:text-4xl">
             From a pilot to a movement
           </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground text-justify md:text-lg">
             What started in 2020 with four courses has grown into an eight-language programme with
             nearly 500 learners joining every year.
           </p>

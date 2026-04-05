@@ -75,7 +75,7 @@ export function WhatMakesUsSpecial() {
         <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-csl-ink md:text-4xl">
           More than just language classes
         </h2>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground text-justify md:text-lg">
           CSL is built on the spirit of seva — voluntary service. Every mentor and coordinator
           contributes their time and expertise freely.
         </p>

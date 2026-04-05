@@ -87,7 +87,7 @@ export function CoursesSection({ courses, languages }: CoursesSectionProps) {
             <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-csl-ink md:text-4xl">
               Languages &amp; Courses
             </h2>
-            <p className="mt-2 max-w-xl text-muted-foreground leading-relaxed">
+            <p className="mt-2 max-w-xl text-muted-foreground leading-relaxed text-justify">
               Explore our volunteer-taught language programs
             </p>
           </div>
@@ -163,7 +163,7 @@ export function CoursesSection({ courses, languages }: CoursesSectionProps) {
                             {course.title}
                           </CardTitle>
                           {course.description && (
-                            <p className="line-clamp-2 text-sm text-muted-foreground">
+                            <p className="line-clamp-2 text-sm text-muted-foreground text-justify">
                               {course.description}
                             </p>
                           )}

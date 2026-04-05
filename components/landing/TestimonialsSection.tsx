@@ -26,7 +26,7 @@ export async function TestimonialsSection() {
         <h2 className="mt-2 text-3xl font-display font-bold tracking-tight text-csl-ink md:text-4xl">
           What Students Say
         </h2>
-        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground text-justify">
           Hear from our global community of language learners and see how CSL is bridging cultures.
         </p>
       </div>
