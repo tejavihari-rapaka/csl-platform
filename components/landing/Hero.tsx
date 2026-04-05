@@ -112,7 +112,7 @@ export function Hero() {
           transition={{ delay: 0.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           Discover the Power of{' '}
-          <span className="relative inline-block min-h-[1.15em] min-w-[140px] text-left md:min-w-[220px]">
+          <span className="relative inline-flex items-center justify-center min-h-[1.6em] min-w-[180px] text-center md:min-w-[220px] overflow-visible" style={{ lineHeight: '1.6' }}>
             <AnimatePresence mode="wait">
               <motion.span
                 key={rotatorIndex}
@@ -120,7 +120,8 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute inset-x-0 top-0 bg-gradient-to-r from-csl-primary to-csl-amber bg-clip-text text-transparent"
+                className="relative inline-block overflow-visible whitespace-nowrap bg-gradient-to-r from-csl-primary to-csl-amber bg-clip-text text-transparent"
+                style={{ lineHeight: '1.6', paddingTop: '6px', paddingBottom: '6px' }}
               >
                 {rotatorContent}
               </motion.span>
