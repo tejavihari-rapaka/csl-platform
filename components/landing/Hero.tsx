@@ -6,10 +6,14 @@ import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import { ChevronDown, Users, BookOpen, Gift } from 'lucide-react';
 
 const ROTATOR_ITEMS = [
-  { en: 'Tamil', native: 'தமிழ்' },
-  { en: 'Hindi', native: 'हिन्दी' },
+  { en: 'English', native: 'English' },
   { en: 'French', native: 'Français' },
-  { en: 'Mandarin', native: '普通话' },
+  { en: 'German', native: 'Deutsch' },
+  { en: 'Hindi', native: 'हिन्दी' },
+  { en: 'Japanese', native: '日本語' },
+  { en: 'Kannada', native: 'ಕನ್ನಡ' },
+  { en: 'Sanskrit', native: 'संस्कृतम्' },
+  { en: 'Telugu', native: 'తెలుగు' },
 ] as const;
 
 const STATS = [

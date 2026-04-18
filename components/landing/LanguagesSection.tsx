@@ -3,16 +3,14 @@ import { Card, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const LANGUAGE_VISUALS: Record<string, { flag: string; native: string }> = {
-  Hindi: { flag: '🇮🇳', native: 'हिन्दी' },
-  Sanskrit: { flag: '🇮🇳', native: 'संस्कृतम्' },
-  Kannada: { flag: '🇮🇳', native: 'ಕನ್ನಡ' },
-  Telugu: { flag: '🇮🇳', native: 'తెలుగు' },
-  Tamil: { flag: '🇮🇳', native: 'தமிழ்' },
-  Mandarin: { flag: '🇨🇳', native: '普通话' }, 
   English: { flag: '🇬🇧', native: 'English' },
   French: { flag: '🇫🇷', native: 'Français' },
   German: { flag: '🇩🇪', native: 'Deutsch' },
+  Hindi: { flag: '🇮🇳', native: 'हिन्दी' },
   Japanese: { flag: '🇯🇵', native: '日本語' },
+  Kannada: { flag: '🇮🇳', native: 'ಕನ್ನಡ' },
+  Sanskrit: { flag: '🇮🇳', native: 'संस्कृतम्' },
+  Telugu: { flag: '🇮🇳', native: 'తెలుగు' },
 };
 
 export async function LanguagesSection() {

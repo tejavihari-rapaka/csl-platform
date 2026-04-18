@@ -15,20 +15,6 @@ async function main() {
   await prisma.language.deleteMany();
 
   // ── LANGUAGES ──────────────────────────────────────────
-  const tamil = await prisma.language.create({
-    data: {
-      name: 'Tamil',
-      code: 'ta',
-      description: 'Classical Dravidian language spoken in South India and Sri Lanka.',
-    },
-  });
-  const hindi = await prisma.language.create({
-    data: {
-      name: 'Hindi',
-      code: 'hi',
-      description: 'Indo-Aryan language, one of the official languages of India.',
-    },
-  });
   const english = await prisma.language.create({
     data: {
       name: 'English',
@@ -43,18 +29,18 @@ async function main() {
       description: 'Romance language spoken across Europe, Africa, and the Americas.',
     },
   });
-  const mandarin = await prisma.language.create({
+  const german = await prisma.language.create({
     data: {
-      name: 'Mandarin',
-      code: 'zh',
-      description: 'Most widely spoken Chinese language, official in China and Taiwan.',
+      name: 'German',
+      code: 'de',
+      description: 'Germanic language spoken in Germany, Austria, and Switzerland.',
     },
   });
-  const telugu = await prisma.language.create({
+  const hindi = await prisma.language.create({
     data: {
-      name: 'Telugu',
-      code: 'te',
-      description: 'Classical Dravidian language, widely spoken in Andhra Pradesh and Telangana.',
+      name: 'Hindi',
+      code: 'hi',
+      description: 'Indo-Aryan language, one of the official languages of India.',
     },
   });
   const japanese = await prisma.language.create({
@@ -64,53 +50,138 @@ async function main() {
       description: 'Fascinating language with unique writing systems, rich culture and anime heritage.',
     },
   });
+  const kannada = await prisma.language.create({
+    data: {
+      name: 'Kannada',
+      code: 'kn',
+      description: 'Classical Dravidian language spoken in Karnataka, India.',
+    },
+  });
+  const sanskrit = await prisma.language.create({
+    data: {
+      name: 'Sanskrit',
+      code: 'sa',
+      description: 'Ancient Indo-Aryan language, classical language of Hinduism and Indian philosophy.',
+    },
+  });
+  const telugu = await prisma.language.create({
+    data: {
+      name: 'Telugu',
+      code: 'te',
+      description: 'Classical Dravidian language, widely spoken in Andhra Pradesh and Telangana.',
+    },
+  });
 
   // ── MENTORS ────────────────────────────────────────────
   const mentor1 = await prisma.mentor.create({
     data: {
-      name: 'Priya Sharma',
-      bio: 'Native Tamil speaker with 5+ years teaching experience. Passionate about sharing language and culture.',
-      languages: ['ta', 'hi'],
+      name: 'Dr. C. Deepika Das',
+      bio: 'Experienced English educator with a passion for helping learners achieve fluency and confidence.',
+      languages: ['en'],
       rating: 4.8,
     },
   });
   const mentor2 = await prisma.mentor.create({
     data: {
-      name: 'Raj Kumar',
-      bio: 'Multilingual educator. Teaches Hindi and English to beginners and intermediate learners.',
-      languages: ['hi', 'en'],
-      rating: 4.6,
+      name: 'Dr. V. Neha',
+      bio: 'French native speaker dedicated to making French accessible and enjoyable for all learners.',
+      languages: ['fr'],
+      rating: 4.9,
     },
   });
   const mentor3 = await prisma.mentor.create({
     data: {
-      name: 'Marie Dupont',
-      bio: 'French native from Paris. Loves helping students achieve conversational fluency.',
-      languages: ['fr', 'en'],
-      rating: 4.9,
+      name: 'Swati Agarwal',
+      bio: 'German language enthusiast with expertise in teaching German grammar and conversational skills.',
+      languages: ['de'],
+      rating: 4.7,
     },
   });
   const mentor4 = await prisma.mentor.create({
     data: {
-      name: 'Wei Chen',
-      bio: 'Mandarin teacher specializing in spoken Chinese for everyday conversations.',
-      languages: ['zh', 'en'],
+      name: 'Mukta Sethi',
+      bio: 'Patient and engaging German mentor helping students build strong language foundations.',
+      languages: ['de'],
       rating: 4.7,
     },
   });
   const mentor5 = await prisma.mentor.create({
     data: {
-      name: 'Ravi Teja',
-      bio: 'Telugu literature enthusiast with a passion for teaching mother tongue to younger generations.',
-      languages: ['te', 'en'],
-      rating: 4.7,
+      name: 'Charu Narayan',
+      bio: 'Hindi educator specializing in conversational Hindi and cultural context.',
+      languages: ['hi'],
+      rating: 4.8,
     },
   });
   const mentor6 = await prisma.mentor.create({
     data: {
-      name: 'Yuki Tanaka',
-      bio: 'Native Japanese speaker from Tokyo. Makes Japanese fun through manga, anime and daily conversation.',
-      languages: ['ja', 'en'],
+      name: 'Shikha Mathur',
+      bio: 'Dynamic Hindi mentor making language learning interactive and fun.',
+      languages: ['hi'],
+      rating: 4.8,
+    },
+  });
+  const mentor7 = await prisma.mentor.create({
+    data: {
+      name: 'Tarunima Kishore',
+      bio: 'Japanese specialist with deep knowledge of Japanese culture and writing systems.',
+      languages: ['ja'],
+      rating: 4.8,
+    },
+  });
+  const mentor8 = await prisma.mentor.create({
+    data: {
+      name: 'Anurag Sinha',
+      bio: 'Passionate Japanese mentor bringing anime and manga culture into language learning.',
+      languages: ['ja'],
+      rating: 4.7,
+    },
+  });
+  const mentor9 = await prisma.mentor.create({
+    data: {
+      name: 'Bhargavi',
+      bio: 'Kannada language expert dedicated to preserving and teaching classical Kannada.',
+      languages: ['kn'],
+      rating: 4.8,
+    },
+  });
+  const mentor10 = await prisma.mentor.create({
+    data: {
+      name: 'Dr. Renu Pant',
+      bio: 'Sanskrit scholar and teacher, passionate about ancient wisdom and linguistic precision.',
+      languages: ['sa'],
+      rating: 5.0,
+    },
+  });
+  const mentor11 = await prisma.mentor.create({
+    data: {
+      name: 'Surabhi Singhal',
+      bio: 'Sanskrit enthusiast dedicated to making this beautiful language accessible to modern learners.',
+      languages: ['sa'],
+      rating: 4.9,
+    },
+  });
+  const mentor12 = await prisma.mentor.create({
+    data: {
+      name: 'Deepa Agarwal',
+      bio: 'Sanskrit educator with expertise in classical texts and contemporary applications.',
+      languages: ['sa'],
+      rating: 4.8,
+    },
+  });
+  const mentor13 = await prisma.mentor.create({
+    data: {
+      name: 'Dr. Y V Subrahmanyam',
+      bio: 'Telugu literary expert and passionate educator sharing the richness of Telugu language and culture.',
+      languages: ['te'],
+      rating: 4.9,
+    },
+  });
+  const mentor14 = await prisma.mentor.create({
+    data: {
+      name: 'Madhusmita',
+      bio: 'Telugu mentor specializing in conversational Telugu and contemporary usage.',
+      languages: ['te'],
       rating: 4.8,
     },
   });
@@ -118,23 +189,61 @@ async function main() {
   // ── COURSES ────────────────────────────────────────────
   await prisma.course.createMany({
     data: [
-      // Tamil
+      // English
       {
-        title: 'Tamil for Beginners',
-        languageId: tamil.id,
+        title: 'English for Beginners',
+        languageId: english.id,
         level: 'BEGINNER',
-        description: 'Learn basic Tamil greetings, introductions, and everyday phrases.',
+        description: 'Learn basic English greetings, introductions, and everyday phrases.',
         status: 'PUBLISHED',
         mentorId: mentor1.id,
         duration: 8,
       },
       {
-        title: 'Tamil Intermediate',
-        languageId: tamil.id,
+        title: 'English Conversation',
+        languageId: english.id,
         level: 'INTERMEDIATE',
-        description: 'Expand vocabulary and tackle more complex sentence structures.',
+        description: 'Improve your English speaking skills for real-life situations.',
         status: 'PUBLISHED',
         mentorId: mentor1.id,
+        duration: 10,
+      },
+      // French
+      {
+        title: 'French Basics',
+        languageId: french.id,
+        level: 'BEGINNER',
+        description: 'Start your French journey with essential vocabulary and grammar.',
+        status: 'PUBLISHED',
+        mentorId: mentor2.id,
+        duration: 12,
+      },
+      {
+        title: 'French Conversation Club',
+        languageId: french.id,
+        level: 'ADVANCED',
+        description: 'Practice fluency in a supportive group setting.',
+        status: 'PUBLISHED',
+        mentorId: mentor2.id,
+        duration: 6,
+      },
+      // German
+      {
+        title: 'German for Beginners',
+        languageId: german.id,
+        level: 'BEGINNER',
+        description: 'Learn basic German greetings and everyday conversational phrases.',
+        status: 'PUBLISHED',
+        mentorId: mentor3.id,
+        duration: 10,
+      },
+      {
+        title: 'German Intermediate',
+        languageId: german.id,
+        level: 'INTERMEDIATE',
+        description: 'Expand your German vocabulary and grammar knowledge.',
+        status: 'PUBLISHED',
+        mentorId: mentor4.id,
         duration: 12,
       },
       // Hindi
@@ -144,7 +253,7 @@ async function main() {
         level: 'INTERMEDIATE',
         description: 'Improve your Hindi speaking skills for real-life situations.',
         status: 'PUBLISHED',
-        mentorId: mentor2.id,
+        mentorId: mentor5.id,
         duration: 10,
       },
       {
@@ -153,46 +262,73 @@ async function main() {
         level: 'ADVANCED',
         description: 'Refine your Hindi for those with informal exposure to the language.',
         status: 'PUBLISHED',
-        mentorId: mentor2.id,
+        mentorId: mentor6.id,
         duration: 8,
       },
-      // English
+      // Japanese
       {
-        title: 'English for Work',
-        languageId: english.id,
-        level: 'INTERMEDIATE',
-        description: 'Professional English for meetings, emails, and presentations.',
-        status: 'PUBLISHED',
-        mentorId: mentor2.id,
-        duration: 6,
-      },
-      // French
-      {
-        title: 'French Basics',
-        languageId: french.id,
+        title: 'Japanese for Beginners',
+        languageId: japanese.id,
         level: 'BEGINNER',
-        description: 'Start your French journey with essential vocabulary and grammar.',
+        description: 'Start with Hiragana, Katakana and essential daily Japanese phrases.',
         status: 'PUBLISHED',
-        mentorId: mentor3.id,
+        mentorId: mentor7.id,
         duration: 12,
       },
       {
-        title: 'French Conversation Club',
-        languageId: french.id,
-        level: 'ADVANCED',
-        description: 'Practice fluency in a supportive group setting.',
+        title: 'Japanese Conversation',
+        languageId: japanese.id,
+        level: 'INTERMEDIATE',
+        description: 'Build confidence in spoken Japanese for travel and daily life.',
         status: 'PUBLISHED',
-        mentorId: mentor3.id,
-        duration: 6,
+        mentorId: mentor8.id,
+        duration: 10,
       },
-      // Mandarin
+      // Kannada
       {
-        title: 'Mandarin Speaking',
-        languageId: mandarin.id,
+        title: 'Kannada for Beginners',
+        languageId: kannada.id,
         level: 'BEGINNER',
-        description: 'Focus on pronunciation and basic conversational Mandarin.',
+        description: 'Learn Kannada script, basic vocabulary and everyday conversations.',
         status: 'PUBLISHED',
-        mentorId: mentor4.id,
+        mentorId: mentor9.id,
+        duration: 8,
+      },
+      {
+        title: 'Kannada Literature & Culture',
+        languageId: kannada.id,
+        level: 'INTERMEDIATE',
+        description: 'Explore Kannada poetry, literature and rich cultural heritage.',
+        status: 'PUBLISHED',
+        mentorId: mentor9.id,
+        duration: 10,
+      },
+      // Sanskrit
+      {
+        title: 'Sanskrit Fundamentals',
+        languageId: sanskrit.id,
+        level: 'BEGINNER',
+        description: 'Master Sanskrit script, basic grammar and foundational concepts.',
+        status: 'PUBLISHED',
+        mentorId: mentor10.id,
+        duration: 12,
+      },
+      {
+        title: 'Sanskrit Classical Texts',
+        languageId: sanskrit.id,
+        level: 'ADVANCED',
+        description: 'Explore ancient Sanskrit wisdom through classical philosophical texts.',
+        status: 'PUBLISHED',
+        mentorId: mentor11.id,
+        duration: 14,
+      },
+      {
+        title: 'Sanskrit for Heritage Speakers',
+        languageId: sanskrit.id,
+        level: 'INTERMEDIATE',
+        description: 'Deepen your Sanskrit knowledge through cultural and philosophical contexts.',
+        status: 'PUBLISHED',
+        mentorId: mentor12.id,
         duration: 10,
       },
       // Telugu
@@ -202,7 +338,7 @@ async function main() {
         level: 'BEGINNER',
         description: 'Learn Telugu script, basic vocabulary and everyday conversations.',
         status: 'PUBLISHED',
-        mentorId: mentor5.id,
+        mentorId: mentor13.id,
         duration: 8,
       },
       {
@@ -211,26 +347,7 @@ async function main() {
         level: 'INTERMEDIATE',
         description: 'Explore Telugu poetry, literature and rich cultural heritage.',
         status: 'PUBLISHED',
-        mentorId: mentor5.id,
-        duration: 10,
-      },
-      // Japanese
-      {
-        title: 'Japanese for Beginners',
-        languageId: japanese.id,
-        level: 'BEGINNER',
-        description: 'Start with Hiragana, Katakana and essential daily Japanese phrases.',
-        status: 'PUBLISHED',
-        mentorId: mentor6.id,
-        duration: 12,
-      },
-      {
-        title: 'Japanese Conversation',
-        languageId: japanese.id,
-        level: 'INTERMEDIATE',
-        description: 'Build confidence in spoken Japanese for travel and daily life.',
-        status: 'PUBLISHED',
-        mentorId: mentor6.id,
+        mentorId: mentor14.id,
         duration: 10,
       },
     ],
@@ -279,8 +396,8 @@ async function main() {
         year: 2024,
       },
       {
-        title: '7 Languages Offered',
-        description: 'CSL expanded to offer 7 languages including Telugu and Japanese.',
+        title: '8 Languages Offered',
+        description: 'CSL expanded to offer 8 languages including Sanskrit, Kannada, German and more.',
         type: 'CENTER',
         year: 2025,
       },
@@ -296,8 +413,8 @@ async function main() {
   // ── SITE STATS ─────────────────────────────────────────
   await prisma.siteStats.create({
     data: {
-      totalCourses: 12,
-      totalMentors: 6,
+      totalCourses: 17,
+      totalMentors: 14,
       pastStudents: 1050,
       enrolledStudents: 127,
       totalCountries: 9,
